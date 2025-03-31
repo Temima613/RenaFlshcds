@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Flashcard Study App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Flashcards</h1>
+    </header>
+    <main>
+        <div id="card" class="addCard">
+            <button id="addCard">Add Card</button>
+        </div>
+
+        <div id="ending" class="card-wrapper">
+            <div class="card-body">
+                <div class="card-front">
+                    <form id="question-form">
+                        <label for="question">Enter a question: </label>
+                        <input type="text" id="question" name="question" required><br><br>
+                    </form>
+                </div>
+                <div class="card-back">
+                    <form id="answer-form">
+                        <label for="answer">Answer:</label>
+                        <input type="text" id="answer" name="answer" required><br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="centered-container">
+            <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+        <div class="centered-container">
+            <button id="nextButton">Next</button>
+            <button id="knownButton">Mark as known</button>
+            <div id="known-count">
+                <p><strong>Known Cards: <span id="known-count-value">0</span></strong></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+

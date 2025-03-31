@@ -1,0 +1,250 @@
+:root {
+    --color1: #f8b195;
+    --color2: #f67280;
+    --color3: #c06c84;
+    --color4: #6c5b7b;
+    --color5: #355c7d;
+    --background-color: #fbf6ed;
+    --font-family: Arial, sans-serif;
+    --heading-font-size: 40px;
+    --subheading-font-size: 25px;
+    --text-font-size: 15px;
+    --main-padding: 20px;
+    --margin-bottom: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--color5);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--color2);
+    color: #fbf6ed;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: var(--margin-bottom);
+}
+
+h1 {
+    font-size: var(--heading-font-size);
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--main-padding);
+}
+
+h2 {
+    font-size: var(--subheading-font-size);
+    color: var(--color4);
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-bottom: var(--margin-bottom);
+    padding-left: var(--main-padding);
+}
+
+ul li, ol li {
+    margin: 10px 0;
+    font-size: var(--text-font-size);
+}
+
+strong {
+    color: var(--color2);
+}
+
+p {
+    font-size: var(--text-font-size);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: var(--main-padding);
+    background-color: var(--color4);
+    color: #fbf6ed;
+    margin-top: var(--margin-bottom);
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+    margin: 0 auto;
+    width: 50vw;
+    padding: 5px 20px;
+}
+
+button {
+    background-color: var(--color2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: var(--color3);
+}
+#knownButton {
+    background-color: var(--color5);
+}
+#knownButton:hover {
+    background-color: var(--color4);
+}
+
+/* Progress Bar */
+/* (Background)*/
+#progress-bar {
+    background-color: var(--color5);
+    height: 20px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    color: var(--color5);
+    appearance: none;
+    flex-grow: 1;
+}
+#progress-bar::-webkit-progress-bar {
+    background-color: #a4caeb;
+}
+#progress-bar::-moz-progress-bar {
+    background-color: var(--color5);
+}
+#progress-bar::-webkit-progress-value {
+    background-color: var(--color5);
+}
+
+/* (Progress value)*/
+#progress-bar span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background-color: var(--color2);
+    border-radius: 10px;
+    appearance: none;
+}
+
+#progress-bar span.end {
+    background-color: var(--color5);
+}
+
+
+/* #remaining-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* This moves the Remaining Jokes counter down a bit becasue it was not aligned before */
+    /* font-size: 15;
+    color: var(--color3);
+} */
+
+#known-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* This moves the Known Jokes counter down a bit becasue it was not aligned before */
+    font-size: 15px;
+    color: var(--color3);
+    flex-shrink: 0;
+}
+
+/* Cards Styles*/
+.card-wrapper {
+    width: 50vw;
+    height: 25vw;
+    perspective: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto; 
+}
+
+.card-body {
+    color: var(--color5);
+    background-color: var(--color2);
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-wrapper.flipped .card-body {
+    transform: rotateX(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: var(--subheading-font-size);
+    font-weight: bold;
+    padding: 40px;
+}
+
+.card-front {
+    position: absolute;
+    color: var(--color5);
+    background-color: var(--color2);
+}
+
+.card-back {
+    color: var(--color2);
+    background-color: var(--color5);
+    transform: rotateX(180deg);
+}
+
+#ending {
+    color: var(--color4);
+    font-weight: bold;
+    font-size: var(--heading-font-size);
+}
+#addCardButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+    
