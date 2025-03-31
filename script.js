@@ -34,6 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Next button not found in the DOM");
     }
 
+
+    const previousButton = document.getElementById("previousButton");
+    console.log("Previous Button:", previousButton); // Debugging line
+    if (previousButton) {
+        previousButton.addEventListener("click", () => {
+            console.log("Previous button clicked");
+            displayValue();
+            decreaseProgress();
+        });
+    } else {
+        console.error("Previous button not found in the DOM");
+    }
+
+
     // Add event listener to the "Mark as Known" button
     const knownButton = document.getElementById("knownButton");
     console.log("Mark as Known Button:", knownButton); // Debugging line
@@ -123,6 +137,16 @@ function increaseProgress() {
     } else if (progressBar.value >= progressBar.max) {
         endGame();
     }
+}
+
+
+function decreaseProgress() {
+  let progressBar = document.getElementById("progress-bar");
+  if (progressBar.value < progressBar.max) {
+      progressBar.value -= 4;
+  } else if (progressBar.value >= progressBar.max) {
+      endGame();
+  }
 }
 
 // End game
